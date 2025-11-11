@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --background: hsl(220 25% 98%);
+    --foreground: hsl(220 20% 12%);
+
+    --card: hsl(220 20% 96%);
+    --card-foreground: hsl(220 20% 12%);
+
+    --popover: hsl(220 20% 96%);
+    --popover-foreground: hsl(220 20% 12%);
+
+    --primary: hsl(190 85% 45%);
+    --primary-foreground: hsl(0 0% 100%);
+
+    --secondary: hsl(220 15% 90%);
+    --secondary-foreground: hsl(220 25% 15%);
+
+    --muted: hsl(220 15% 88%);
+    --muted-foreground: hsl(220 10% 40%);
+
+    --accent: hsl(220 15% 90%);
+    --accent-foreground: hsl(220 15% 15%);
+    
+    --destructive: hsl(0 75% 55%);
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 190 85% 45%;
+
+    --radius: 0.5rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme dark {
+    --color-background: hsl(220 25% 10%);
+    --color-foreground: hsl(220 15% 95%);
+
+    --color-card: hsl(220 20% 14%);
+    --color-card-foreground: hsl(220 15% 95%);
+
+    --popover: hsl(220 20% 14%);
+    --popover-foreground: hsl(220 15% 95%);
+
+    --color-primary: hsl(190 85% 55%);
+    --color-primary-foreground: hsl(220 25% 10%);
+
+    --color-secondary: hsl(220 15% 20%);
+    --color-secondary-foreground: hsl(220 15% 95%);
+
+    --color-muted: hsl(220 15% 20%);
+    --color-muted-foreground: hsl(220 10% 60%);
+
+    --color-accent: hsl(220 15% 22%);
+    --color-accent-foreground: hsl(220 15% 95%);
+    --color-destructive: hsl(0 70% 60%);
+    --color-destructive-foreground: hsl(220 15% 95%);
+
+    --color-border: hsl(220 15% 22%);
+    --color-input: hsl(220 15% 22%);
+    --color-ring: hsl(190 85% 55%);
+
+    --radius: 0.5rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    border-color: var(--color-border);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: var(--transition-smooth);
+}
+
+.navbar-glass {
+    background-color: var(--color-card/90);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
