@@ -48,7 +48,7 @@ const ParticlesBackground = () => {
                                     distance: 200,
                                     size: 10,
                                     duration: 2,
-                                    opacity: 0.6,
+                                    opacity: 0.3,
                                 },
                             },
                         },

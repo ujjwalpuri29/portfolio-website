@@ -27,5 +27,5 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
-          publish_branch: main
+          publish_branch: gh-pages
           publish_dir: ./dist
