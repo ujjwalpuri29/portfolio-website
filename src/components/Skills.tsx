@@ -28,6 +28,8 @@ import {
 import { FaAws } from "react-icons/fa";
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import PowerBIIcon from "../assets/icons/PowerBIIcon";
+import { Card, CardTagsContainer, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 const Skills = () => {
     const skillCategories = [
@@ -94,7 +96,7 @@ const Skills = () => {
     return (
         <section id="skills" className="py-16 md:py-24 px-6">
             <div className="container mx-auto max-w-6xl">
-                <div className="md:text-center md:mb-16 animate-fade-in">
+                <div className="md:text-center md:mb-12 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Skills &{" "}
                         <span className="text-primary">Technologies</span>
@@ -103,28 +105,24 @@ const Skills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 items-stretch md:auto-rows-fr">
                     {skillCategories.map((category, index) => (
-                        <div
+                        <Card
                             key={index}
-                            className="bg-card/90 border border-border p-4 md:p-8 rounded-md animate-fade-in h-full"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            <p className="text-lg font-semibold mb-4">
+                            <CardTitle className="mb-4">
                                 {category.category}
-                            </p>
-                            <div className="flex flex-wrap gap-3">
+                            </CardTitle>
+                            <CardTagsContainer>
                                 {category.skills.map((skill, skillIndex) => (
-                                        <div
-                                            key={skillIndex}
-                                            className="flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full font-medium text-sm"
-                                        >
-                                            <skill.icon className="text-sm" />
-                                            <span className="text-sm">
-                                                {skill.name}
-                                            </span>
-                                        </div>
-                                    ))}
-                            </div>
-                        </div>
+                                    <Badge key={skillIndex}>
+                                        <skill.icon className="text-sm" />
+                                        <span className="text-sm">
+                                            {skill.name}
+                                        </span>
+                                    </Badge>
+                                ))}
+                            </CardTagsContainer>
+                        </Card>
                     ))}
                 </div>
             </div>

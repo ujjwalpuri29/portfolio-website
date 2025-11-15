@@ -32,7 +32,7 @@ const Experience = () => {
     return (
         <section id="experience" className="py-16 md:py-24 px-6 bg-card/30">
             <div className="container mx-auto max-w-7xl">
-                <div className="md:text-center md:mb-16 animate-fade-in">
+                <div className="md:text-center md:mb-12 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Experience
                     </h2>
