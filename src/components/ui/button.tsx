@@ -4,6 +4,7 @@ type ButtonVariant =
     | "default"
     | "destructive"
     | "secondary"
+    | "icon"
     | "outline"
     | "ghost"
     | "link";
@@ -15,14 +16,16 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-    default: "bg-primary text-primary-foreground hover:bg-primary/90",
+    default: "bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer",
     destructive:
         "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+    icon:
+        "border border-input bg-background hover:bg-accent hover:text-accent-foreground cursor-pointer",
     outline:
-        "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    ghost: "hover:bg-accent/90 hover:text-accent-foreground",
-    link: "text-primary underline-offset-4 hover:underline",
+        "border border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-primary hover:text-background cursor-pointer",
+    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 cursor-pointer",
+    ghost: "hover:bg-accent/90 hover:text-accent-foreground cursor-pointer",
+    link: "hover:text-primary underline-offset-4 underline cursor-pointer",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

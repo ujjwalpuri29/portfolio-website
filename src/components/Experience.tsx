@@ -1,3 +1,6 @@
+import { Button } from "./ui/button";
+import { BsArrowUpRight } from "react-icons/bs";
+
 const Experience = () => {
     const experience = [
         {
@@ -27,19 +30,19 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-24 px-6 bg-card/30">
+        <section id="experience" className="py-16 md:py-24 px-6 bg-card/30">
             <div className="container mx-auto max-w-7xl">
-                <div className="text-center md:mb-16 animate-fade-in">
+                <div className="md:text-center md:mb-16 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Experience
                     </h2>
                 </div>
-
-                <div className="max-w-5xl mx-auto space-y-2">
+                <div className="flex flex-col gap-2 items-end max-w-5xl mx-auto">
+                <div className="space-y-2">
                     {experience.map((item, index) => (
                         <div
                             key={index}
-                            className="py-4 md:p-8 rounded-lg hover:bg-card"
+                            className="py-4 md:p-8 rounded-lg hover:bg-card/60 hover:backdrop-blur-sm animate-fade-in"
                         >
                             <div className="md:flex items-center gap-4 md:gap-8">
                                 <div className="flex flex-shrink-0 md:mx-3 min-w-[100px]">
@@ -77,6 +80,11 @@ const Experience = () => {
                             </div>
                         </div>
                     ))}
+                    </div>
+                    <Button variant="link">
+                        View All Experiences <BsArrowUpRight className="inline stroke-2 h-3 w-3 ml-2" />
+                    </Button>
+                    
                 </div>
             </div>
         </section>

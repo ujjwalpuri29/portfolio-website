@@ -75,7 +75,7 @@ const Skills = () => {
             category: "Tools and Platforms",
             skills: [
                 { name: "AWS", icon: FaAws },
-                { name: "GCP", icon: SiGooglecloud },
+                { name: "Google Cloud", icon: SiGooglecloud },
                 { name: "Git", icon: SiGit },
                 { name: "GitHub", icon: SiGithub },
                 { name: "Figma", icon: SiFigma },
@@ -92,9 +92,9 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="py-24 px-6">
+        <section id="skills" className="py-16 md:py-24 px-6">
             <div className="container mx-auto max-w-6xl">
-                <div className="text-center md:mb-16 animate-fade-in">
+                <div className="md:text-center md:mb-16 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         Skills &{" "}
                         <span className="text-primary">Technologies</span>
@@ -105,7 +105,7 @@ const Skills = () => {
                     {skillCategories.map((category, index) => (
                         <div
                             key={index}
-                            className="glass-card p-4 md:p-8 rounded-sm animate-fade-in h-full"
+                            className="bg-card/90 border border-border p-4 md:p-8 rounded-md animate-fade-in h-full"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <p className="text-lg font-semibold mb-4">

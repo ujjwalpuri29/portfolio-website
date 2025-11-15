@@ -4,7 +4,7 @@ import { BsGithub, BsLinkedin, BsEnvelope } from "react-icons/bs";
 const Hero = () => {
     const scrollToAbout = () => {
         document
-            .getElementById("about")
+            .getElementById("experience")
             ?.scrollIntoView({ behavior: "smooth" });
     };
 
@@ -13,7 +13,7 @@ const Hero = () => {
             id="hero"
             className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
-            <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="container mx-auto px-6 relative z-10 md:text-center">
                 <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
                     <h1 className="text-5xl md:text-7xl font-bold">
                         <span className="block">Ujjwal Puri</span>
@@ -22,13 +22,13 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+                    <p className="text-lg md:text-2xl text-muted-foreground max-w-4xl mx-auto">
                         Crafting beautiful digital experiences through code and
                         design. Master's student at USC passionate about building innovative
                         solutions to real-world problems.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 justify-center items-center pt-4">
+                    <div className="flex flex-wrap gap-4 md:justify-center items-center pt-4">
                         <Button
                             size="lg"
                             variant="default"
@@ -43,7 +43,7 @@ const Hero = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Button size="icon" variant="outline">
+                                <Button size="icon" variant="icon">
                                     <BsGithub className="h-5 w-5" />
                                 </Button>
                             </a>
@@ -52,12 +52,12 @@ const Hero = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Button size="icon" variant="outline">
+                                <Button size="icon" variant="icon">
                                     <BsLinkedin className="h-5 w-5" />
                                 </Button>
                             </a>
                             <a href="mailto:ujjwalpuri.work@gmail.com">
-                                <Button size="icon" variant="outline">
+                                <Button size="icon" variant="icon">
                                     <BsEnvelope className="h-5 w-5" />
                                 </Button>
                             </a>
