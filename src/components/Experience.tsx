@@ -27,7 +27,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-24 px-6 bg-background">
+        <section id="experience" className="py-24 px-6 bg-card/30">
             <div className="container mx-auto max-w-7xl">
                 <div className="text-center md:mb-16 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
