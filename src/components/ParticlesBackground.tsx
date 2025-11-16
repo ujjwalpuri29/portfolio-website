@@ -3,7 +3,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesBackground = () => {
+const ParticlesBackground = ({ theme }: { theme: "light" | "dark" }) => {
     const [init, setInit] = useState(false);
 
     useEffect(() => {
@@ -48,16 +48,16 @@ const ParticlesBackground = () => {
                                     distance: 200,
                                     size: 10,
                                     duration: 2,
-                                    opacity: 0.3,
+                                    opacity: 0.6,
                                 },
                             },
                         },
                         particles: {
                             color: {
-                                value: "#ffffff",
+                                value: theme === "dark" ? "#ffffff" : "#828282",
                             },
                             links: {
-                                color: "#8f8f8f",
+                                color: theme === "dark" ? "#8f8f8f" : "#828282",
                                 distance: 150,
                                 enable: true,
                                 opacity: 0.3,

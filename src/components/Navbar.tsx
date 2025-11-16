@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo.tsx";
 import { Button } from "./ui/button";
-import { BsList, BsX } from "react-icons/bs";
+import { BsList, BsX, BsSun, BsMoon } from "react-icons/bs";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+    theme: "light" | "dark";
+    setTheme: (theme: "light" | "dark") => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,7 +37,9 @@ const Navbar: React.FC = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                (isScrolled || isMobileMenuOpen) ? "bg-card/80 border-b border-border backdrop-blur-md [transition:var(--animate-transition-smooth)] shadow-lg" : "bg-transparent"
+                isScrolled || isMobileMenuOpen
+                    ? "bg-card/80 border-b border-border backdrop-blur-md [transition:var(--animate-transition-smooth)] shadow-lg"
+                    : "bg-transparent"
             }`}
         >
             <div className="container mx-auto px-6">
@@ -53,6 +62,18 @@ const Navbar: React.FC = () => {
                                 {link.label}
                             </Button>
                         ))}
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={toggleTheme}
+                            className="ml-2"
+                        >
+                            {theme === "dark" ? (
+                                <BsSun className="h-5 w-5" />
+                            ) : (
+                                <BsMoon className="h-5 w-5" />
+                            )}
+                        </Button>
                     </div>
 
                     <div className="md:hidden flex items-center gap-2">
@@ -81,11 +102,23 @@ const Navbar: React.FC = () => {
                                         key={link.id}
                                         variant="ghost"
                                         onClick={() => scrollToSection(link.id)}
-                                        className="justify-start"
+                                        className="justify-end"
                                     >
                                         {link.label}
                                     </Button>
                                 ))}
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    onClick={toggleTheme}
+                                    className="self-end m-2"
+                                >
+                                    {theme === "dark" ? (
+                                        <BsSun className="h-5 w-5" />
+                                    ) : (
+                                        <BsMoon className="h-5 w-5" />
+                                    )}
+                                </Button>
                             </div>
                         </div>
                     </div>

@@ -6,18 +6,23 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Home />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
-  );
+interface IndexProps {
+    theme: "light" | "dark";
+    setTheme: (theme: "light" | "dark") => void;
+}
+
+const Index = ({ theme, setTheme }: IndexProps) => {
+    return (
+        <div className="min-h-screen">
+            <Navbar theme={theme} setTheme={setTheme} />
+            <Home />
+            <Experience />
+            <Skills />
+            <Projects />
+            <Contact />
+            <Footer />
+        </div>
+    );
 };
 
 export default Index;
