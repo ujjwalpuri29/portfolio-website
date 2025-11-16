@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { BsGithub, BsLinkedin, BsEnvelope } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsEnvelope, BsArrowDown } from "react-icons/bs";
 
 const Hero = () => {
     const scrollToAbout = () => {
@@ -24,7 +24,8 @@ const Hero = () => {
 
                     <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
                         Crafting beautiful digital experiences through code and
-                        design. Master's student at University of Southern California passionate about building innovative
+                        design. Master's student at University of Southern
+                        California passionate about building innovative
                         solutions to real-world problems.
                     </p>
 
@@ -42,6 +43,7 @@ const Hero = () => {
                                 href="https://github.com/ujjwalpuri29"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                tabIndex={-1}
                             >
                                 <Button size="icon" variant="icon">
                                     <BsGithub className="h-5 w-5" />
@@ -51,12 +53,16 @@ const Hero = () => {
                                 href="https://www.linkedin.com/in/ujjwal-puri/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                tabIndex={-1}
                             >
                                 <Button size="icon" variant="icon">
                                     <BsLinkedin className="h-5 w-5" />
                                 </Button>
                             </a>
-                            <a href="mailto:ujjwalpuri.work@gmail.com">
+                            <a
+                                href="mailto:ujjwalpuri.work@gmail.com"
+                                tabIndex={-1}
+                            >
                                 <Button size="icon" variant="icon">
                                     <BsEnvelope className="h-5 w-5" />
                                 </Button>
@@ -64,6 +70,9 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <BsArrowDown className="h-6 w-6 text-primary" />
             </div>
         </section>
     );

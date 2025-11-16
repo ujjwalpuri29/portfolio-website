@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 import ParticlesBackground from "./components/ParticlesBackground";
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                     path="/"
                     element={<Index theme={theme} setTheme={setTheme} />}
                 />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );

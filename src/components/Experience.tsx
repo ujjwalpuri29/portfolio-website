@@ -1,3 +1,4 @@
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { BsArrowUpRight } from "react-icons/bs";
 
@@ -45,7 +46,10 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="pt-24 pb-16 md:py-24 px-6 bg-card/30">
+        <section
+            id="experience"
+            className="pt-24 pb-16 md:py-24 px-6 bg-card/30"
+        >
             <div className="container mx-auto max-w-7xl">
                 <div className="md:text-center md:mb-12 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -88,12 +92,7 @@ const Experience = () => {
                                         </div>
                                         <div className="flex flex-wrap gap-2 mt-3">
                                             {item.skills.map((skill, index) => (
-                                                <span
-                                                    key={index}
-                                                    className="px-3 py-1 bg-primary/10 text-primary rounded-full font-medium text-sm leading-5"
-                                                >
-                                                    {skill}
-                                                </span>
+                                                <Badge key={index}>{skill}</Badge>
                                             ))}
                                         </div>
                                     </div>
@@ -105,6 +104,7 @@ const Experience = () => {
                         href="Resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
+                        tabIndex={-1}
                     >
                         <Button variant="link">
                             View All Experiences{" "}

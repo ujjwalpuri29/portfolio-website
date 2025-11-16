@@ -38,9 +38,11 @@ const Contact = () => {
                 <div className="flex flex-wrap gap-4 justify-start md:justify-center items-center pt-4">
                     {contactInfo.map((info, index) => (
                         <a
+                            key={index}
                             href={info.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            tabIndex={-1}
                         >
                             <Button key={index} size={window.innerWidth >= 768 ? "lg" : "icon"} variant={window.innerWidth >= 768 ? "outline" : "ghost"} className="flex justify-center items-center gap-3">
                                 <info.icon className="h-5 w-5" />

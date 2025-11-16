@@ -7,6 +7,7 @@ import {
 } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { Badge } from "./ui/badge";
 
 const Projects = () => {
     const projects = [
@@ -16,7 +17,7 @@ const Projects = () => {
                 "Predictive analytics product for publishers to estimate book popularity from manuscript data",
             tags: [
                 "Python",
-                "Flask",
+                "Data Analysis",
                 "Machine Learning",
                 "Natural Language Processing",
             ],
@@ -29,11 +30,14 @@ const Projects = () => {
             tags: [
                 "Python",
                 "Google Calendar API",
-                "Flask",
+                "FastAPI",
                 "OAuth2",
                 "Web Scraping",
             ],
-            links: { live: "#", github: "https://github.com/ujjwalpuri29/gradescope-calendar-sync" },
+            links: {
+                live: "#",
+                github: "https://github.com/ujjwalpuri29/gradescope-calendar-sync",
+            },
         },
     ];
 
@@ -58,14 +62,9 @@ const Projects = () => {
                                 {project.description}
                                 <CardTagsContainer>
                                     {project.tags.map((tag, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full font-medium text-sm"
-                                        >
-                                            <span className="text-sm">
-                                                {tag}
-                                            </span>
-                                        </div>
+                                        <Badge key={index} className="text-sm">
+                                            {tag}
+                                        </Badge>
                                     ))}
                                 </CardTagsContainer>
                             </CardDescription>
@@ -76,6 +75,7 @@ const Projects = () => {
                                             href={project.links.pub}
                                             target="_blank"
                                             rel="noopener noreferrer"
+                                            tabIndex={-1}
                                         >
                                             <Button
                                                 size="sm"
@@ -93,6 +93,7 @@ const Projects = () => {
                                                 href={project.links.live}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                tabIndex={-1}
                                             >
                                                 <Button
                                                     size="sm"
@@ -115,6 +116,7 @@ const Projects = () => {
                                         href={project.links.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        tabIndex={-1}
                                     >
                                         <Button size="sm" variant="ghost">
                                             <BsGithub className="h-5 w-5" />
