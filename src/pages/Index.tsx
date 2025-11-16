@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar";
 import Home from "../components/Home";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
@@ -8,6 +9,7 @@ import Footer from "../components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navbar />
       <Home />
       <Experience />
       <Skills />

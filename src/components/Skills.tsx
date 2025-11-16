@@ -94,7 +94,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="py-16 md:py-24 px-6">
+        <section id="skills" className="pt-24 pb-16 md:py-24 px-6">
             <div className="container mx-auto max-w-6xl">
                 <div className="md:text-center md:mb-12 animate-fade-in">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">

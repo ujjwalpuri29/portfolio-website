@@ -17,14 +17,14 @@ const Hero = () => {
                 <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
                     <h1 className="text-5xl md:text-7xl font-bold">
                         <span className="block">Ujjwal Puri</span>
-                        <span className="text-3xl md:text-4xl">
+                        <span className="text-3xl md:text-4xl font-semibold">
                             AI/ML and Front-End Web Developer
                         </span>
                     </h1>
 
-                    <p className="text-lg md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+                    <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
                         Crafting beautiful digital experiences through code and
-                        design. Master's student at USC passionate about building innovative
+                        design. Master's student at University of Southern California passionate about building innovative
                         solutions to real-world problems.
                     </p>
 
